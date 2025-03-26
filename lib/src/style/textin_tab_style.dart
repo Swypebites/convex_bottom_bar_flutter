@@ -41,7 +41,16 @@ class TextInTabStyle extends InnerBuilder {
     if (active) {
       var textStyle = style.textStyle(activeColor, item.fontFamily);
       return Container(
-        padding: const EdgeInsets.only(bottom: 2),
+        padding: const EdgeInsets.only(bottom: 8),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white.withOpacity(0.2),
+                Color(0xFF6262EC).withOpacity(0.1),
+              ]),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -54,9 +63,13 @@ class TextInTabStyle extends InnerBuilder {
                 size: style.activeIconSize,
               ),
             ),
+            SizedBox(height: 4),
             TransitionContainer.slide(
               curve: curve,
-              child: Text(item.title ?? '', style: textStyle),
+              child: Text(item.title ?? '',
+                  style: textStyle.copyWith(
+                    fontSize: 12,
+                  )),
             ),
           ],
         ),
