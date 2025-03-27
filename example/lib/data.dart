@@ -46,6 +46,7 @@ class Data {
   ];
 
   static const namedColors = [
+    NamedColor(Colors.white, 'White'),
     NamedColor(Colors.blue, 'Blue'),
     NamedColor(Color(0xFFf44336), 'Red'),
     NamedColor(Color(0xFF673AB7), 'Purple'),

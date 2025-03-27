@@ -196,6 +196,7 @@ class _State extends State<DefaultAppBarDemo>
                 shadowColor: _shadowColor,
                 backgroundColor: _barColor,
                 gradient: _gradient,
+                height: 60,
                 controller: _tabController,
                 onTap: (int i) => debugPrint('select index=$i'),
               )

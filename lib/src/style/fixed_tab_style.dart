@@ -43,7 +43,18 @@ class FixedTabStyle extends InnerBuilder {
     if (index == convexIndex) {
       var item = items[convexIndex];
       return Container(
-        padding: EdgeInsets.only(bottom: 2),
+        padding: EdgeInsets.only(bottom: 8),
+        decoration: active
+            ? BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.white.withOpacity(0.07),
+                      Color(0xFF6262EC).withOpacity(0.1),
+                    ]),
+              )
+            : null,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
@@ -52,7 +63,14 @@ class FixedTabStyle extends InnerBuilder {
               color: item.blend ? (c) : null,
               size: style.activeIconSize,
             ),
-            Text(item.title ?? '', style: textStyle)
+            SizedBox(height: 2),
+            Text(
+              item.title ?? '',
+              style: textStyle.copyWith(
+                fontSize: 12,
+                color: Color(0xFF787A7A),
+              ),
+            ),
           ],
         ),
       );
@@ -66,9 +84,30 @@ class FixedTabStyle extends InnerBuilder {
     );
     var children = noLabel
         ? <Widget>[icon]
-        : <Widget>[icon, Text(item.title ?? '', style: textStyle)];
+        : <Widget>[
+            icon,
+            SizedBox(height: 2),
+            Text(
+              item.title ?? '',
+              style: textStyle.copyWith(
+                fontSize: 12,
+                color: Color(0xFF787A7A),
+              ),
+            ),
+          ];
     return Container(
-      padding: EdgeInsets.only(bottom: 2),
+      padding: EdgeInsets.only(bottom: 8),
+      decoration: active
+          ? BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.white.withOpacity(0.07),
+                    Color(0xFF6262EC).withOpacity(0.1),
+                  ]),
+            )
+          : null,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: children,
