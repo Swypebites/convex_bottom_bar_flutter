@@ -72,6 +72,7 @@ class ConvexPainter extends CustomPainter {
     var percent = textDirection == TextDirection.rtl
         ? (1 - leftPercent.value)
         : leftPercent.value;
+
     var guest =
         Rect.fromLTWH(size.width * percent - width / 2, top, width, height);
     _gradient.updateWith(_paint, size: host);

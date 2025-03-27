@@ -193,7 +193,7 @@ class _State extends State<DefaultAppBarDemo>
                 items: _tabItems.value,
                 style: _style.value,
                 curve: _curve.value,
-                shadowColor: _shadowColor,
+                shadowColor: Data.namedColors[2].color,
                 backgroundColor: _barColor,
                 gradient: _gradient,
                 height: 60,

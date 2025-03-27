@@ -47,12 +47,13 @@ class FixedTabStyle extends InnerBuilder {
         decoration: active
             ? BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.white.withOpacity(0.07),
-                      Color(0xFF6262EC).withOpacity(0.1),
-                    ]),
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.white.withOpacity(0.07),
+                    Color(0xFF6262EC).withOpacity(0.1),
+                  ],
+                ),
               )
             : null,
         child: Column(
