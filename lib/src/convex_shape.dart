@@ -113,6 +113,7 @@ class ConvexNotchedRectangle extends NotchedShape {
           ..quadraticBezierTo(p[4].dx - 4, p[4].dy, p[5].dx, p[5].dy)
           ..lineTo(host.right, host.top)
           ..lineTo(host.right , host.bottom)
+
           ..lineTo(host.left, host.bottom)
           ..close());
   }
