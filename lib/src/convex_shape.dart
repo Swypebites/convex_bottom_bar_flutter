@@ -49,7 +49,7 @@ class ConvexNotchedRectangle extends NotchedShape {
 
     // The guest's shape is a circle bounded by the guest rectangle.
     // So the guest's radius is half the guest width.
-    final notchRadius = guest.width/2.5 ; // cao
+    final notchRadius = guest.width/2.4 ; // cao
 
     const s1 = 15.0;
     const s2 = 1.0;
@@ -107,7 +107,7 @@ class ConvexNotchedRectangle extends NotchedShape {
           ..quadraticBezierTo(p[1].dx + 4, p[1].dy, p[2].dx, p[2].dy)
           ..arcToPoint(
             p[3],
-            radius: Radius.circular(notchRadius - 8),
+            radius: Radius.circular(notchRadius - 6),
             clockwise: true,
           )
           ..quadraticBezierTo(p[4].dx - 4, p[4].dy, p[5].dx, p[5].dy)
