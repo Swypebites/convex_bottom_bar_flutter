@@ -118,6 +118,12 @@ class ConvexAppBar extends StatefulWidget {
   /// ![corner image](https://github.com/hacktons/convex_bottom_bar/raw/master/doc/appbar-corner.png)
   final double? cornerRadius;
 
+
+  /// Draw the background fab with width and height; Only work work with fixed style
+  ///
+  /// ![corner image](https://github.com/hacktons/convex_bottom_bar/raw/master/doc/appbar-corner.png)
+  final Size? fabSize;
+
   /// If provided, backgroundColor for tab app will be ignored.
   ///
   /// ![](https://github.com/hacktons/convex_bottom_bar/raw/master/doc/appbar-gradient.gif)
@@ -206,6 +212,7 @@ class ConvexAppBar extends StatefulWidget {
     double? top,
     double? elevation,
     double? cornerRadius,
+    Size? fabSize,
     TabStyle? style,
     Curve? curve,
     ChipBuilder? chipBuilder,
@@ -233,6 +240,7 @@ class ConvexAppBar extends StatefulWidget {
           top: top,
           elevation: elevation,
           cornerRadius: cornerRadius,
+    fabSize: fabSize,
           curve: curve ?? Curves.easeInOut,
           chipBuilder: chipBuilder,
         );
@@ -269,6 +277,7 @@ class ConvexAppBar extends StatefulWidget {
     this.top,
     this.elevation,
     this.cornerRadius,
+    this.fabSize,
     this.curve = Curves.easeInOut,
     this.chipBuilder,
   })  : assert(top == null || top <= 0, 'top should be negative'),
@@ -567,6 +576,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
               sigma: widget.elevation ?? ELEVATION,
               leftPercent: percent,
               textDirection: textDirection,
+              fabSize: widget.fabSize,
               cornerRadius: widget.cornerRadius,
             ),
           ),

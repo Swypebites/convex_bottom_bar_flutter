@@ -53,7 +53,9 @@ class ConvexPainter extends CustomPainter {
     double sigma = 2,
     Gradient? gradient,
     double? cornerRadius,
+    Size? fabSize,
   }) : super(repaint: leftPercent) {
+    fabSize ??= const Size(4, 50);
     _paint.color = color;
     try {
       _shadowPaint
@@ -63,7 +65,7 @@ class ConvexPainter extends CustomPainter {
       debugPrintStack(label: 'ElevationError', stackTrace: s);
     }
     _gradient.gradient = gradient;
-    _shape = ConvexNotchedRectangle(radius: cornerRadius ?? 0);
+    _shape = ConvexNotchedRectangle(radius: cornerRadius ?? 0, fabSize: fabSize);
   }
 
   @override

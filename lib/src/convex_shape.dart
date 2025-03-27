@@ -17,8 +17,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/painting.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/painting.dart';
 
 /// A convex shape which implemented [NotchedShape].
 ///
@@ -33,8 +34,13 @@ class ConvexNotchedRectangle extends NotchedShape {
   /// Draw the background with topLeft and topRight corner
   final double radius;
 
+  final Size fabSize;
+
   /// Create Shape instance
-  const ConvexNotchedRectangle({this.radius = 0});
+  const ConvexNotchedRectangle({
+    this.radius = 0,
+    this.fabSize = const Size(4, 50),
+  });
 
   @override
   Path getOuterPath(Rect host, Rect? guest) {
@@ -42,10 +48,10 @@ class ConvexNotchedRectangle extends NotchedShape {
 
     // The guest's shape is a circle bounded by the guest rectangle.
     // So the guest's radius is half the guest width.
-    final notchRadius = (guest.width - 7) / 2.0;
+    final notchRadius = (guest.width + fabSize.height + 10) / fabSize.width - 5;
 
-    const s1 = 7;
-    const s2 = -3;
+    const s1 = 15;
+    const s2 = -2;
 
     final r = notchRadius;
     final a = -1.0 * r - s2;
